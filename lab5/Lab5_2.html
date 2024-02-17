@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab5 From2</title>
+        <style>
+            section {
+                width: 30%;
+            }
+            h1 {
+                border-bottom: 2px solid black;
+                text-align: left;
+                padding-bottom: 2px;
+            }
+            label {
+                width: 150px;
+                display: inline-block;
+                text-align: right;
+                margin-bottom: 10px;
+            }
+            input {
+                margin-bottom: 10px;
+            }
+            #button {
+                background-color: green;
+                border: 0px;
+                color: white;
+                border-radius: 5px;
+                height: 25px;
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+        <h1>Payment</h1>
+        
+        
+        <label for="cardHolderName">Card Holder's Name</label>
+        <input type="text" id="cardHolderName" style="width: 150px;"><br>
+        
+        
+        <label for="cardNumnber">Card Number</label>
+        <input type="text" id="cardNumnber" style="width: 150px;"><br>
+        
+        <label for="cardExpiryDate">Card Expiry Date</label>
+        <input type="number" id="cardExpirydDate" min="1" max="12"step="1" value="" style="width: 120px;">
+        <input type="number" min="2000" step="1" value="2013" style="width: 100px;"><br>
+        
+        <label for="cardCvv">Card CVV</label>
+        <input type="text" id="cardCvv" style="width: 100px;"><br>
+        <label for="check"></label>
+        <input type="checkbox" id="check">Save card on file?</input><br>
+        <label for="buttom"></label>
+        <input type="submit" id="button"  value="Pay Now">
+    </section>
+    </body>
+</html>
