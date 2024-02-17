@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lab5</title>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src='https://www.google.com/recaptcha/api.js?render=6LfCsm4pAAAAAC12TFg85XHI-j810mc_LUoHJkNW' async defer></script>
+        
+        <style>
+            section {
+                text-align: left;
+                border: 2px solid black;
+                width: 40%;
+                margin: 20px; 
+                box-shadow: rgba(6, 0, 14, 0.16) 0px 1px 10px, rgb(17, 213, 200) 0px 0px 0px 9px;
+            }
+            h1 {
+                color: red;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            input {
+                margin-bottom: 10px;
+                border: 1px solid red;
+                display: inline-block;
+                border-radius: 4px;
+                height: 20px;
+                width: 90%;
+
+            }
+            .g-recaptcha {
+                padding-left: 25px;
+                margin-bottom: 10px;
+            }
+            textarea {
+                resize: none;
+                border: 1px solid red;
+                display: inline-block;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                
+            }
+            .first {
+                width: 25%;
+                display: inline-block;
+                margin-bottom: 10px;
+                height: 20px;
+                text-align: left;
+                padding-left: 25px;
+                color: rgb(143, 9, 9);
+            }
+            .second {
+                width: 65%;
+                display: inline-block;
+                text-align: right;
+            }
+            #hobby {
+                width: auto;
+            }
+            div {
+                display: inline-block;
+            }
+            select {
+                display: inline-block;
+            }
+            .trangle {
+                -webkit-appearance: none;
+                -moz-appearance: none; 
+                appearance: none; 
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5" width="10" height="5" fill="red"><polygon points="0,0 10,0 5,5"/></svg>'); /* Custom arrow */
+                background-repeat: no-repeat;
+                background-position: right center;
+            }
+            optgroup {
+                color: red;
+            }
+            small {
+                display: inline-block;
+                width: 65px;
+                padding-left: 40px;
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>STUDENT REGISTRATION FORM</h1>
+            <div class="first">First Name</div>
+            <div class="second"><input type="text" placeholder="Enter First Name"  required></div><br>
+
+            <div class="first">Last Name</div>
+            <div class="second"><input type="text" placeholder="Enter Last Name"  required></div><br>
+
+            <div class="first">Gender</div>
+            <div style="padding-left: 60px;"><input type="radio" style="width: auto;">Male</input>
+                <input type="radio" style="width: auto;">Female</input></div><br>
+
+            <div class="first">Age</div>
+            <div class="second"><input type="text" placeholder="Enter Your Age" required></div><br>
+
+            <div class="first">Date Of Birth</div>
+            <div class="second"><input type="date"></div><br>
+
+            <div class="first">Email Address</div>
+            <div class="second"><input type="email" placeholder="Enter Your Email"  required></div><br>
+
+            <div class="first">Password</div>
+            <div class="second"><input type="password" placeholder="Enter Your Email Min 8 Characters"  minlength="8" required></div><br>
+
+            <div class="first">Confirm Password</div>
+            <div class="second"><input type="password" placeholder="Confirm Password" minlength="8" required></div><br>
+
+            <div class="first">Phone number</div>
+            <div class="second">
+            <select style="width: 10%;">
+                <optgroup label="Area Number">
+                    <option value="+1">+1</option>
+                    <option value="+86">+86</option>
+                    <option value="+9">+9</option>
+                </optgroup>
+            </select>
+            <input type="text" required autocomplete="off" placeholder="Enter Your Phone Number" style="width: 75%;"  required></div><br>
+
+            <div class="first" style="vertical-align:top;padding-top: 45px;">Address</div>
+            <textarea class="second" style="height: 100px; width: 58.5%;margin-left: 30px;text-align: left;" placeholder="Enter Your Address" novalidate required></textarea><br>
+            <div class="first">state</div>
+            <div class="second"><select class="trangle" style="height: 25px;border: 1px solid red; border-radius: 4px;width: 92%;">
+                <optgroup>
+                    <option value="state">--Select your state--</option>
+                    <option value="on">ON</option>
+                    <option value="ma">MA</option>
+                    <option value="bc">BC</option>
+                </optgroup>
+            </select></div><br>
+            <div class="first">Pin Code</div>
+            <div class="second"><input type="text" id="pinCode" placeholder="Enter Your Pin Code" required></div><br>
+            <div class="first">Hobbies</div>
+            <div style="vertical-align: middle;margin-right: 20px;"><input type="checkbox" id="hobby" value="Music" style="margin: 0px;vertical-align: middle;margin-right: 2px;">Music</input></div>
+            <div style="margin-right: 20px;"><input type="checkbox" id="hobby" value="Movies" style="margin: 0px;vertical-align: middle;margin-right: 2px;">Movies</input></div>
+            <div style="margin-right: 20px;"><input type="checkbox" id="hobby" value="Sports" style="margin: 0px;vertical-align: middle;margin-right: 2px;">Sports</input></div>
+            <div style="margin-right: 20px;"><input type="checkbox" id="hobby" value="Travel" style="margin: 0px;vertical-align: middle;margin-right: 2px;">Travel</input></div><br>
+        
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="first" id="photo">Upload Photos</div>
+                <small>*Max size 100kb</small>
+                <input type="file" name="photoUpload" id="photoUpload" style="border: 0;width: 50%;height: 25px;" ><br>
+            </form>
+            <input type="checkbox" id="checkbox" style="border:0px; width: auto; height: auto; margin-left: 25px;outline: 1px solid red; outline-style:auto">I declear that the above information provided is true and correct.</input>
+            <div class="g-recaptcha" data-sitekey="6LfCsm4pAAAAAC12TFg85XHI-j810mc_LUoHJkNW"></div><br>
+            <input type="submit" name="register" value="Register" id="submit" style="width: 180px;height: 25px;margin-left: 70px;background-color: red;color: white;">
+            <input type="reset" name="resetform" value="Reset" id="reset" style="width: 180px;height: 25px;margin-left: 40px;background-color: red;color: white;">
+        </section>
+        
+    </body>
+
+</html>
